@@ -7,5 +7,6 @@
         public decimal Total { get; set; }
         public DateTime Date { get; set; }
         public int ExpenseClaimId { get; set; }
+        public string ExpenseClaimTitle { get; set; }
     }
 }

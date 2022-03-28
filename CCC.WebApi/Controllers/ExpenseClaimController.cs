@@ -28,7 +28,7 @@ namespace CCC.WebApi.Controllers
             return Ok(await _expenseClaimService.GetClaimDetails(query));
         }
 
-        [HttpPost("update-expense-claim")]
+        [HttpPatch("update-expense-claim")]
         public async Task<IActionResult> CreateClaim(CreateClaimRequestDto requestDto)
         {
             return Ok(await _expenseClaimService.UpdateClaim(requestDto));
@@ -40,10 +40,22 @@ namespace CCC.WebApi.Controllers
             return Ok(await _expenseClaimService.CreateClaim());
         }
 
-        [HttpPost("create-expense-claim-details")]
-        public async Task<IActionResult> CreateClaimDetails(List<CreateClaimDetailsRequestDto> requestDto)
+        [HttpPatch("update-expense-claim-detail")]
+        public async Task<IActionResult> UpdateClaimDetail(CreateClaimDetailsRequestDto requestDto)
         {
-            return Ok(await _expenseClaimService.CreateClaimDetails(requestDto));
+            return Ok(await _expenseClaimService.UpdateClaimDetail(requestDto));
+        }
+
+        [HttpPost("create-expense-claim-detail")]
+        public async Task<IActionResult> CreateClaimDetail()
+        {
+            return Ok(await _expenseClaimService.CreateClaimDetail());
+        }
+
+        [HttpGet("get-expense-title")]
+        public async Task<IActionResult> GetExpenseTitle(int id)
+        {
+            return Ok(await _expenseClaimService.GetClaimTitle(id));
         }
     }
 }

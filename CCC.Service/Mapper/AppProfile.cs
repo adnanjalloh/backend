@@ -21,7 +21,9 @@ namespace CCC.Service.Mapper
             CreateMap<ExpenseClaim, SearchExpenseClaimResponseDto>()
                 .ForMember(dest => dest.EmployeeTitle, act => act.MapFrom(src => src.Employee.Name));
 
-            CreateMap<ExpenseClaimDetail, GetClaimDetailsResponseDto>();
+            CreateMap<ExpenseClaimDetail, GetClaimDetailsResponseDto>()
+                 .ForMember(dest => dest.ExpenseClaimTitle, act => act.MapFrom(src => src.ExpenseClaim.Description));
+
             CreateMap<CreateEmployeeRequestDto, Employee >();
             CreateMap<Employee, CreateEmployeeResponseDto>();
             CreateMap<UpdateEmployeeRequestDto, Employee>();

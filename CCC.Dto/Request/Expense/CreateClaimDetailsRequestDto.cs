@@ -4,6 +4,7 @@ namespace CCC.Dto.Request.Expense
 {
     public class CreateClaimDetailsRequestDto
     {
+        public int ExpenseClaimDetailId { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]

@@ -10,6 +10,8 @@ namespace CCC.Service.Interface
         Task<PaggingOperationResult<GetClaimDetailsResponseDto>> GetClaimDetails(Query<GetClaimDetailsRequestDto> query);
         Task<OperationResult<CreateClaimResponseDto>> CreateClaim();
         Task<OperationResult<CreateClaimResponseDto>> UpdateClaim(CreateClaimRequestDto requestDto);
-        Task<OperationResult<List<CreateClaimDetailsResponseDto>>> CreateClaimDetails(List<CreateClaimDetailsRequestDto> requestDto);
+        Task<OperationResult<CreateClaimDetailsResponseDto>> UpdateClaimDetail(CreateClaimDetailsRequestDto requestDto);
+        Task<OperationResult<CreateClaimDetailsResponseDto>>CreateClaimDetail();
+        Task<OperationResult<string>> GetClaimTitle(int id);
     }
 }
