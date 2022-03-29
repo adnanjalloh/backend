@@ -104,6 +104,7 @@ namespace CCC.Service.Implementaion
                 }
                 else
                 {
+                    dbExpenseClaimDetail.Date = DateTime.UtcNow;
                     dbUpdateingResult = await _expenseClaimDetailRepository.AddAsync(dbExpenseClaimDetail);
                 }
 
