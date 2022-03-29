@@ -94,7 +94,7 @@ namespace CCC.Service.Implementaion
 
                 var dbExpenseClaimDetail = _mapper.Map<ExpenseClaimDetail>(requestDto);
 
-                var dbGetExpenseClaimDetailResult = await _expenseClaimRepository.GetAsync(x => x.ExpenseClaimId == requestDto.ExpenseClaimId);
+                var dbGetExpenseClaimDetailResult = await _expenseClaimDetailRepository.GetAsync(x => x.ExpenseClaimDetailId == requestDto.ExpenseClaimDetailId);
 
                 var dbUpdateingResult = new OperationResult<ExpenseClaimDetail>();
 
@@ -123,7 +123,7 @@ namespace CCC.Service.Implementaion
                     result.MapValues(getClaimResult);
 
                     if (dbUpdateingResult is not null)
-                        result.Response = _mapper.Map<CreateClaimDetailsResponseDto>(dbUpdateingResult);
+                        result.Response = _mapper.Map<CreateClaimDetailsResponseDto>(dbUpdateingResult.Response);
                 }
                
             }
