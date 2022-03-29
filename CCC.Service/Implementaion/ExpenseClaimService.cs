@@ -150,7 +150,7 @@ namespace CCC.Service.Implementaion
                 if (result.Errors.Any())
                     return result;
 
-                var dbResult = await _expenseClaimDetailRepository.GetListAsync(x => x.ExpenseClaimId == query.Parameter.ClaimId);
+                var dbResult = await _expenseClaimDetailRepository.GetListAsync(x => x.ExpenseClaimId == query.Parameter.ClaimId, query:query);
 
                 result.MapValues(dbResult);
 
